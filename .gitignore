@@ -1,0 +1,10 @@
+# Installed packages (recreated with npm install)
+node_modules/
+
+# Local database file (holds real accounts, never upload it)
+*.db
+*.db-journal
+
+# Misc
+.env
+.DS_Store

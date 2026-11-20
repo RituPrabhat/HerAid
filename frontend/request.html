@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HerAid: I need help</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .hidden { display: none; }
+    .status-card { text-align: center; }
+    .status-card h1 { font-size: 1.6rem; margin: 10px 0 6px; }
+    .status-card p { color: var(--brown-soft); }
+    .timer {
+      font-size: 2.6rem; font-weight: 700; color: var(--red);
+      margin: 10px 0 4px; font-variant-numeric: tabular-nums;
+    }
+    .details {
+      text-align: left; background: var(--blush); border-radius: 10px;
+      padding: 12px 16px; margin: 16px 0; font-size: 0.95rem;
+    }
+    .details div { padding: 2px 0; }
+    .details strong { display: inline-block; min-width: 70px; }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <span class="logo" aria-hidden="true">HA</span>
+        HerAid
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="request.html" class="active">I Need Help</a>
+        <a href="requests.html">I Can Help</a>
+        <a href="my-activity.html">My Activity</a>
+        <span id="nav-auth"></span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="page-head">
+      <div class="pill"><b>●</b> Anonymous: your name stays hidden</div>
+      <h1>Need a hand? <span>Ask quietly.</span></h1>
+      <p class="section-sub">Tell us what you need and where you are. Helpers only see your department and year.</p>
+    </div>
+
+    <!-- Form: shown when you have no active request -->
+    <div class="card form-card" id="form-card" style="margin-top: 10px;">
+
+      <form id="request-form">
+        <label for="item">What do you need?</label>
+        <select id="item" required>
+          <option value="">Choose an item</option>
+          <option>Sanitary Pads</option>
+          <option>Tampons</option>
+          <option>Panty Liners</option>
+          <option>Pain Relief Tablet</option>
+          <option>Other</option>
+        </select>
+
+        <label for="venue">Venue (where are you?)</label>
+        <input type="text" id="venue" list="venue-list" placeholder="Choose or type, e.g. Near Library" required maxlength="60">
+        <datalist id="venue-list">
+          <option value="CSE / ECE">
+          <option value="IT">
+          <option value="Mech">
+          <option value="B.Arch">
+          <option value="GCR">
+          <option value="Near Canteen">
+          <option value="Main Gate">
+          <option value="Near Library">
+          <option value="Basketball Court">
+          <option value="Academic Block">
+          <option value="Near Anveshan">
+          <option value="Auditorium">
+        </datalist>
+
+        <label for="floor">Floor</label>
+        <select id="floor" required>
+          <option value="">Choose a floor</option>
+          <option>Ground</option>
+          <option>1st</option>
+          <option>2nd</option>
+          <option>3rd</option>
+          <option>4th</option>
+        </select>
+
+        <label for="note">Extra note (optional)</label>
+        <input type="text" id="note" placeholder="e.g. Near the stairs, Room 204" maxlength="100">
+
+        <button class="btn btn-block" type="submit">Send SOS request</button>
+      </form>
+
+      <div class="form-msg" id="msg"></div>
+    </div>
+
+    <!-- Status: shown while your request is open, accepted, or just finished -->
+    <div class="card form-card status-card hidden" id="status-card">
+      <span class="badge open" id="status-badge">Open</span>
+      <h1 id="status-title"></h1>
+      <p id="status-text"></p>
+      <div class="timer hidden" id="timer"></div>
+
+      <div class="details" id="details"></div>
+
+      <button class="btn btn-green btn-block hidden" id="received-btn" type="button">Received ✔</button>
+      <button class="btn btn-block hidden" id="again-btn" type="button">Send a new request</button>
+      <div class="form-msg" id="status-msg"></div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    HerAid: made with care by students, for students.
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/request.js"></script>
+</body>
+</html>

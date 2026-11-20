@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HerAid: login</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .tabs { display: flex; gap: 6px; background: var(--blush); padding: 5px; border-radius: 11px; margin-bottom: 18px; }
+    .tab {
+      flex: 1; border: none; cursor: pointer; padding: 10px;
+      border-radius: 8px; font-size: 1rem; font-weight: 600; font-family: inherit;
+      background: transparent; color: var(--brown-soft);
+    }
+    .tab.active { background: var(--white); color: var(--red); box-shadow: var(--shadow); }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <span class="logo" aria-hidden="true">HA</span>
+        HerAid
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="request.html">I Need Help</a>
+        <a href="requests.html">I Can Help</a>
+        <a href="my-activity.html">My Activity</a>
+        <span id="nav-auth"></span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card form-card">
+
+      <div class="tabs">
+        <button class="tab active" id="tab-login" type="button">Login</button>
+        <button class="tab" id="tab-register" type="button">Create account</button>
+      </div>
+
+      <!-- Login form -->
+      <form id="login-form">
+        <h1>Welcome back</h1>
+        <p class="section-sub">Log in to ask for or offer help.</p>
+
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" required autocomplete="email">
+
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" required autocomplete="current-password">
+
+        <button class="btn btn-block" type="submit">Login</button>
+      </form>
+
+      <!-- Register form -->
+      <form id="register-form" class="hidden">
+        <h1>Join HerAid</h1>
+        <p class="section-sub">Your name is never shown on requests. Only your department and year are.</p>
+
+        <label for="reg-name">Full name</label>
+        <input type="text" id="reg-name" required autocomplete="name">
+
+        <label for="reg-email">Email</label>
+        <input type="email" id="reg-email" required autocomplete="email">
+
+        <label for="reg-password">Password (at least 6 characters)</label>
+        <input type="password" id="reg-password" required minlength="6" autocomplete="new-password">
+
+        <label for="reg-department">Department</label>
+        <select id="reg-department" required>
+          <option value="">Choose your department</option>
+          <option>CSE</option>
+          <option>CSE-AI</option>
+          <option>IT</option>
+          <option>ECE</option>
+          <option>ECE-AI</option>
+          <option>Mech</option>
+          <option>B.Arch</option>
+          <option>MBA</option>
+          <option>MCA</option>
+        </select>
+
+        <label for="reg-year">Year</label>
+        <select id="reg-year" required>
+          <option value="">Choose your year</option>
+          <option value="1">1st year</option>
+          <option value="2">2nd year</option>
+          <option value="3">3rd year</option>
+          <option value="4">4th year</option>
+        </select>
+
+        <button class="btn btn-block" type="submit">Create account</button>
+      </form>
+
+      <div class="form-msg" id="msg"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    HerAid: made with care by students, for students.
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

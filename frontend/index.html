@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HerAid: help is one tap away</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <span class="logo" aria-hidden="true">HA</span>
+        HerAid
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="request.html">I Need Help</a>
+        <a href="requests.html">I Can Help</a>
+        <a href="my-activity.html">My Activity</a>
+        <span id="nav-auth"></span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="home">
+    <div class="home-pill"><b>●</b> <span id="counter">Students helping students</span></div>
+
+    <h1>Caught off guard?<br><span>Someone nearby has your back.</span></h1>
+    <p class="home-lead">Send an anonymous request for a pad or tampon. A student nearby brings it to you, usually within minutes.</p>
+
+    <div class="home-btns">
+      <a class="btn btn-red" href="request.html">I Need Help</a>
+      <a class="btn btn-line" href="requests.html">I Can Help</a>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step"><i>1</i><div><b>Send an SOS</b><small>Item, venue, floor</small></div></div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step"><i>2</i><div><b>A student accepts</b><small>Within 15 minutes</small></div></div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step"><i>3</i><div><b>Mark received</b><small>All sorted</small></div></div>
+    </div>
+
+    <div class="recent">
+      <span class="recent-label">Just helped:</span>
+      <div class="chips" id="feed"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    HerAid: made with care by students, for students.
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

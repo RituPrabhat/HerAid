@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HerAid: my activity</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin-top: 18px; }
+    .stat { text-align: center; }
+    .stat .big { font-size: 2.2rem; font-weight: 700; color: var(--red); line-height: 1.1; }
+    .stat .label { color: var(--brown-soft); font-size: 0.92rem; }
+    .history { list-style: none; display: grid; gap: 10px; }
+    .history li {
+      background: var(--white); border: 1px solid var(--line); border-radius: 14px;
+      padding: 14px 18px; display: flex; justify-content: space-between;
+      align-items: center; gap: 12px; flex-wrap: wrap;
+    }
+    .history .h-main { font-weight: 600; }
+    .history .h-meta { color: var(--grey); font-size: 0.88rem; margin-top: 2px; }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container">
+      <a href="index.html" class="brand">
+        <span class="logo" aria-hidden="true">HA</span>
+        HerAid
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="request.html">I Need Help</a>
+        <a href="requests.html">I Can Help</a>
+        <a href="my-activity.html" class="active">My Activity</a>
+        <span id="nav-auth"></span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-head">
+      <div class="pill"><b>●</b> Your HerAid history</div>
+      <h1>My <span>Activity</span></h1>
+      <p class="section-sub">Everything you asked for and every time you helped.</p>
+      <div class="stats">
+        <div class="card stat"><div class="big" id="stat-helped">0</div><div class="label">Times I helped</div></div>
+        <div class="card stat"><div class="big" id="stat-asked">0</div><div class="label">Requests I made</div></div>
+        <div class="card stat"><div class="big" id="stat-solved">0</div><div class="label">Requests solved</div></div>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2>Help I gave</h2>
+      <ul class="history" id="helped-list"></ul>
+      <div class="empty" id="helped-empty" style="display:none">You haven't helped anyone yet. <a href="requests.html">See who needs help</a></div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <h2>My requests</h2>
+      <ul class="history" id="asked-list"></ul>
+      <div class="empty" id="asked-empty" style="display:none">You haven't asked for help yet. <a href="request.html">Send an SOS</a></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    HerAid: made with care by students, for students.
+  </footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/activity.js"></script>
+</body>
+</html>
