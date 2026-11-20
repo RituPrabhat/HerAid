@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HerAid: help is one tap away</title>
+  <meta name="description" content="Ask for a pad or tampon anonymously. A student nearby brings it to you.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
-<body>
+<body class="home-page">
 
   <header class="nav">
     <div class="container">
@@ -25,33 +27,63 @@
     </div>
   </header>
 
-  <main class="home">
-    <div class="home-pill"><b>●</b> <span id="counter">Students helping students</span></div>
+  <main>
 
-    <h1>Caught off guard?<br><span>Someone nearby has your back.</span></h1>
-    <p class="home-lead">Send an anonymous request for a pad or tampon. A student nearby brings it to you, usually within minutes.</p>
+    <section class="h-hero">
+      <div class="h-wrap">
+        <div>
+          <div class="h-label">Student help network</div>
+          <h1>Caught off guard?<br><span>Someone nearby<br>has your back.</span></h1>
+          <p class="h-sub">Ask for a pad or tampon anonymously. A student nearby brings it to you.</p>
+          <div class="h-btns">
+            <a class="hbtn hbtn-red" href="request.html">I Need Help</a>
+            <a class="hbtn hbtn-line" href="requests.html">I Can Help</a>
+          </div>
+        </div>
+        <div class="h-art">
+          <img src="images/tulips.png" alt="A gift box of red tulips" width="340" height="340">
+        </div>
+      </div>
+    </section>
 
-    <div class="home-btns">
-      <a class="btn btn-red" href="request.html">I Need Help</a>
-      <a class="btn btn-line" href="requests.html">I Can Help</a>
+    <div class="h-facts">
+      <div class="h-wrap">
+        <div class="h-fact"><b id="count">0</b><span id="count-label">students helped this month</span></div>
+        <div class="h-fact"><b>Free</b><span>students helping students</span></div>
+      </div>
     </div>
 
-    <div class="flow">
-      <div class="flow-step"><i>1</i><div><b>Send an SOS</b><small>Item, venue, floor</small></div></div>
-      <span class="flow-arrow">→</span>
-      <div class="flow-step"><i>2</i><div><b>A student accepts</b><small>Within 15 minutes</small></div></div>
-      <span class="flow-arrow">→</span>
-      <div class="flow-step"><i>3</i><div><b>Mark received</b><small>All sorted</small></div></div>
-    </div>
+    <section class="h-how">
+      <div class="h-wrap">
+        <h2>How it works</h2>
+        <div class="h-steps">
+          <div class="h-step"><i>1</i><b>Send an SOS</b><p>Choose the item, add your venue and floor.</p></div>
+          <div class="h-step"><i>2</i><b>A student accepts</b><p>You see their first name. Help is on the way.</p></div>
+          <div class="h-step"><i>3</i><b>Mark it received</b><p>Tap once you have it. Done.</p></div>
+        </div>
+      </div>
+    </section>
 
-    <div class="recent">
-      <span class="recent-label">Just helped:</span>
-      <div class="chips" id="feed"></div>
-    </div>
+    <section class="h-close">
+      <div class="h-wrap">
+        <div class="h-cta">
+          <h3>Be the friend someone needed today</h3>
+          <p>Create an account in under a minute.</p>
+          <a class="hbtn" href="login.html">Get started</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="footer">
-    HerAid: made with care by students, for students.
+  <footer class="site-footer">
+    <div class="container foot-inner">
+      <div>
+        <a href="index.html" class="brand"><span class="logo" aria-hidden="true">HA</span>HerAid</a>
+        <p>Made by students, for students.</p>
+      </div>
+      <div class="foot-copy">© 2026 HerAid</div>
+    </div>
   </footer>
 
   <script src="js/common.js"></script>

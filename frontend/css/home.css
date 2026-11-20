@@ -1,0 +1,80 @@
+/* HerAid homepage (loaded only by index.html; everything is scoped to body.home-page) */
+
+body.home-page .container { max-width: 1100px; padding-left: 20px; padding-right: 20px; }
+.h-wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* ---------- Hero: text left, illustration right ---------- */
+.h-hero .h-wrap { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: center; padding-top: 40px; padding-bottom: 56px; }
+.h-label { display: flex; align-items: center; gap: 12px; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); margin-bottom: 24px; }
+.h-label::before { content: ""; width: 38px; height: 2px; background: var(--red); }
+.h-hero h1 { font-size: clamp(2rem, 5.6vw, 4.5rem); line-height: 1; letter-spacing: -0.035em; font-weight: 800; margin-bottom: 24px; }
+.h-hero h1 span { color: var(--red); }
+.h-sub { font-size: 1.18rem; color: var(--brown-soft); max-width: 480px; margin-bottom: 32px; }
+
+.h-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.hbtn { display: inline-block; padding: 16px 34px; border-radius: 12px; font-weight: 700; font-size: 1.05rem; transition: 0.15s; }
+.hbtn:hover { transform: translateY(-2px); text-decoration: none; }
+.hbtn-red { background: var(--red); color: var(--white); box-shadow: 0 10px 22px rgba(164, 22, 26, 0.28); }
+.hbtn-red:hover { background: var(--red-dark); }
+.hbtn-line { border: 2px solid var(--brown); color: var(--brown); }
+.hbtn-line:hover { background: var(--brown); color: var(--white); }
+
+.h-art { position: relative; display: flex; justify-content: center; align-items: center; }
+.h-art::before {
+  content: ""; position: absolute; width: min(380px, 92%); aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #f9e7df, var(--blush) 70%);
+  box-shadow: 0 24px 50px rgba(122, 15, 18, 0.12);
+}
+.h-art img { position: relative; width: min(340px, 88%); height: auto; display: block; filter: drop-shadow(0 14px 18px rgba(74, 28, 28, 0.18)); }
+
+/* ---------- Facts strip ---------- */
+.h-facts { background: var(--white); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.h-facts .h-wrap { display: grid; grid-template-columns: repeat(2, 1fr); }
+.h-fact { padding: 24px; border-left: 1px solid var(--line); }
+.h-fact:first-child { border-left: 0; padding-left: 0; }
+.h-fact b { display: block; font-size: 2.2rem; color: var(--red); letter-spacing: -0.02em; line-height: 1.1; }
+.h-fact span { color: var(--brown-soft); font-size: 0.95rem; }
+
+/* ---------- How it works ---------- */
+.h-how { padding: 72px 0 76px; }
+.h-how h2 { font-size: 1.05rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brown-soft); margin-bottom: 26px; font-weight: 700; }
+.h-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.h-step { background: var(--white); border: 1px solid var(--line); border-radius: 20px; padding: 26px 24px; box-shadow: 0 6px 18px rgba(74, 28, 28, 0.06); transition: transform 0.2s, box-shadow 0.2s; }
+.h-step:hover { transform: translateY(-4px); box-shadow: 0 16px 30px rgba(74, 28, 28, 0.12); }
+.h-step i { width: 44px; height: 44px; border-radius: 50%; background: var(--red); color: var(--white); font-style: normal; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; box-shadow: 0 6px 14px rgba(164, 22, 26, 0.28); }
+.h-step b { display: block; font-size: 1.2rem; margin-bottom: 4px; }
+.h-step p { color: var(--brown-soft); font-size: 0.97rem; }
+
+/* ---------- Closing call to action ---------- */
+body.home-page main { display: flex; flex-direction: column; }
+.h-close { background: var(--blush); padding: 64px 0; flex: 1; display: flex; align-items: center; }
+.h-close .h-wrap { width: 100%; }
+.h-cta { background: linear-gradient(135deg, var(--red) 0%, var(--brown) 100%); border-radius: 28px; color: var(--white); text-align: center; padding: 52px 24px; box-shadow: 0 22px 44px rgba(122, 15, 18, 0.28); }
+.h-cta h3 { font-size: clamp(1.7rem, 3.6vw, 2.5rem); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 8px; color: var(--white); }
+.h-cta p { color: #f6dcd3; margin-bottom: 26px; }
+.h-cta .hbtn { background: var(--white); color: var(--red); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25); }
+.h-cta .hbtn:hover { background: var(--blush); }
+
+/* ---------- Footer: shared (see style.css); no gap above it on the homepage ---------- */
+body.home-page .site-footer { margin-top: 0; }
+
+/* ---------- Tablet ---------- */
+@media (max-width: 700px) {
+  .h-hero .h-wrap { grid-template-columns: 1fr; gap: 10px; padding-top: 20px; }
+  .h-art { order: 2; margin-top: 8px; }
+  .h-art::before { width: min(300px, 80%); }
+  .h-art img { width: min(270px, 70%); }
+  .h-how { padding: 52px 0 56px; }
+  .h-close { padding: 44px 0; }
+}
+
+/* ---------- Phone ---------- */
+@media (max-width: 640px) {
+  .h-steps { grid-template-columns: 1fr; gap: 14px; }
+  .h-btns .hbtn { width: 100%; text-align: center; }
+  .h-hero .h-wrap { padding-bottom: 30px; }
+  .h-fact { padding: 18px 10px; }
+  .h-fact:first-child { padding-left: 0; }
+  .h-fact b { font-size: 1.5rem; }
+  .h-fact span { font-size: 0.82rem; display: block; line-height: 1.3; }
+}
